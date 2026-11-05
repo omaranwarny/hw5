@@ -1,0 +1,17 @@
+[
+  {
+    "prompt": "Use the campus-customs-ops tool check_stock to check CC-HOOD-NAVY size M for 20 units (ticket 103).",
+    "tool": "check_stock",
+    "output": {"found":true,"sku":"CC-HOOD-NAVY","name":"Basic Hoodie Big Yale","size":"M","location":"Aisle A","qty_on_hand":8,"qty_needed":20,"can_fill_from_stock":false,"shortfall":12,"sizes_on_hand":{"L":14,"M":8,"S":4,"XL":6},"as_of":"2026-08-31"}
+  },
+  {
+    "prompt": "Use the campus-customs-ops tool get_invoice_status for invoice 501 (ticket 101).",
+    "tool": "get_invoice_status",
+    "output": {"found":true,"invoice_id":501,"description":"Rush reprint CC-TEE-WHITE S","amount":840,"due_date":"2026-08-28","status":"open","today":"2026-08-31","overdue":true,"days_past_due":3,"vendor":{"id":1,"name":"Bulldog Print Co","specialty":"apparel reprint","lead_days":5},"vendor_open_invoices":[{"id":501,"amount":840,"due_date":"2026-08-28"}],"vendor_open_total":840,"vendor_will_ship":false,"ship_block_reason":"Bulldog Print Co has 1 open unpaid invoice(s); it won't ship new product until they are paid.","payments_recorded":[]}
+  },
+  {
+    "prompt": "Use the campus-customs-ops tool get_lease_due for lease 1 (ticket 102).",
+    "tool": "get_lease_due",
+    "output": {"found":true,"lease_id":1,"space_name":"Chapel Street shop","landlord":"Elm City Properties","monthly_rent":2400,"next_due":"2026-09-02","notes":null,"today":"2026-08-31","days_until_due":2,"overdue":false,"checking_balance":3400,"checking_as_of":"2026-08-31","can_cover_from_checking":true,"balance_after_rent":1000,"payments_recorded":[],"note":"Paying rent needs human approval; this tool only reports."}
+  }
+]

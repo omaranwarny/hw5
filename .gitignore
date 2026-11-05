@@ -1,0 +1,28 @@
+# Secrets: never commit the real .env (only the placeholder file)
+.env
+.env.*
+!.env.example
+
+# Python / Node installs
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+frontend/dist/
+frontend/node_modules/.tmp/
+
+# Runtime leftovers (the real output/audit_trail.json IS committed)
+output/*.tmp
+output/audit_trail.broken-*.json
+output/mcp_server.log
+*.db-journal
+*.db-wal
+*.db-shm
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# NOTE: data/campus_customs.db (original) and data/campus_customs_new.db (working copy)
+# ARE committed on purpose so graders can run the app.

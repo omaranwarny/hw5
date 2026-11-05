@@ -1,0 +1,146 @@
+{
+  "shop_date": "2026-08-31",
+  "model": "gpt-6-luna",
+  "reset_before_run": true,
+  "checking_start": 3400.0,
+  "checking_end": 152.0,
+  "tickets": [
+    {
+      "id": 101,
+      "type": "customer_order",
+      "subject": "Bulldog tee (1× CC-TEE-WHITE S) for Tauhid Zaman",
+      "final_status": "resolved",
+      "outcome": "Tee S was out of stock and Bulldog Print Co was on hold for overdue invoice 501. A human approved invoice 501 ($840) and a 1-tee reprint PO ($8, ETA 2026-09-05); a delay note to Tauhid is drafted, not sent.",
+      "runs": [
+        {
+          "session": "7c6a005a",
+          "kind": "start",
+          "ended": "waiting_approval"
+        },
+        {
+          "session": "7362f610",
+          "kind": "close-out",
+          "ended": "waiting_approval"
+        },
+        {
+          "session": "d788e86d",
+          "kind": "close-out",
+          "ended": "resolved"
+        }
+      ],
+      "agents": {
+        "boss": "Routed to Inventory and Accounting in parallel, then Customer Service; on close-outs verified 501 paid and the PO approved, then resolved.",
+        "inventory": "check_stock tee S = 0 (M 5, L 3, XL 2); matched vendor Bulldog Print Co (5-day lead); drafted PO #1 (1× tee S, $8) blocked by invoice 501; asked Accounting to queue the PO once 501 was paid.",
+        "accounting": "Confirmed 501 was 3 days overdue and blocking shipping; requested approval #1 ($840); avoided a duplicate request; later requested approval #3 for PO #1 ($8).",
+        "customer_service": "Drafted message #2 to Tauhid: short reprint delay, no promised date, asks whether to keep the order.",
+        "facilities": null
+      },
+      "drafts": [
+        1,
+        2
+      ],
+      "human_approvals": [
+        {
+          "approval_id": 1,
+          "kind": "invoice",
+          "ref_id": 501,
+          "payee": "Bulldog Print Co",
+          "amount": 840.0,
+          "requested_by": "accounting",
+          "decision": "approved",
+          "approved_by": "Omar Anwar",
+          "payment_id": 1,
+          "paid_at": "2026-08-31"
+        },
+        {
+          "approval_id": 3,
+          "kind": "purchase_order",
+          "ref_id": 1,
+          "payee": "Bulldog Print Co",
+          "amount": 8.0,
+          "requested_by": "accounting",
+          "decision": "approved",
+          "approved_by": "Omar Anwar",
+          "payment_id": 3,
+          "paid_at": "2026-08-31"
+        }
+      ],
+      "cash_change": -848.0
+    },
+    {
+      "id": 102,
+      "type": "rent_notice",
+      "subject": "Rent due for lease 1 (Chapel Street shop), Elm City Properties",
+      "final_status": "resolved",
+      "outcome": "Rent of $2,400 due 2026-09-02 was confirmed against the lease, queued for approval, approved by a human and paid; the lease's next_due moved to 2026-10-02.",
+      "runs": [
+        {
+          "session": "7294c3f5",
+          "kind": "start",
+          "ended": "waiting_approval"
+        },
+        {
+          "session": "ace740a8",
+          "kind": "close-out",
+          "ended": "resolved"
+        }
+      ],
+      "agents": {
+        "boss": "Sent it to Facilities; advised approving overdue invoice #1 before rent #2; on close-out saw payment #2 recorded and resolved.",
+        "facilities": "get_lease_due: $2,400 due 2026-09-02 (2 days, urgent); checked cash; delegated the payment request to Accounting; set waiting_approval.",
+        "accounting": "Requested approval #2 ($2,400 to Elm City Properties); reported that #1 + #2 together leave $160.",
+        "inventory": null,
+        "customer_service": null
+      },
+      "drafts": [],
+      "human_approvals": [
+        {
+          "approval_id": 2,
+          "kind": "rent",
+          "ref_id": 1,
+          "payee": "Elm City Properties",
+          "amount": 2400.0,
+          "requested_by": "accounting",
+          "decision": "approved",
+          "approved_by": "Omar Anwar",
+          "payment_id": 2,
+          "paid_at": "2026-08-31"
+        }
+      ],
+      "cash_change": -2400.0
+    },
+    {
+      "id": 103,
+      "type": "price_override",
+      "subject": "Yale AI Club wants 20× CC-HOOD-NAVY M at a bulk discount",
+      "final_status": "resolved",
+      "outcome": "Boss approved the deepest in-policy discount: 25% off, 20 × $43.50 = $870 (49.4% margin). 8 are in stock and 12 need a restock (~2026-09-05); a reply to the club is drafted, not sent. No money moved.",
+      "runs": [
+        {
+          "session": "26b33cd9",
+          "kind": "start",
+          "ended": "resolved"
+        }
+      ],
+      "agents": {
+        "boss": "Asked Inventory and Accounting in parallel, re-checked the quote itself, recorded the price decision (draft #3), had Customer Service draft the reply, and resolved.",
+        "inventory": "check_stock hoodie M = 8 on hand, shortfall 12; vendor Bulldog Print Co now shipping, 5-day lead; no PO drafted (pending customer acceptance).",
+        "accounting": "get_pricing + quote_price: cost $22, list $58; deepest allowed 25% → $43.50 each, $870, 49.4% margin; no payment requested.",
+        "customer_service": "Drafted message #4 to Yale AI Club with the price, 8 in stock, 12 by ~September 5, and a request to confirm.",
+        "facilities": null
+      },
+      "drafts": [
+        3,
+        4
+      ],
+      "human_approvals": [],
+      "cash_change": 0.0,
+      "issue_found": "The quote promises 12 more hoodies by 09-05, but the $264 restock exceeds the $152 left in checking, and the draft names the vendor."
+    }
+  ],
+  "cash_check": {
+    "payments_total": 3248.0,
+    "formula": "3400.00 - 840.00 - 2400.00 - 8.00 = 152.00",
+    "matches_cash_accounts": true
+  }
+}

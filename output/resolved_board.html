@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campus Customs: Resolved Board</title>
+<style>
+  :root { --navy:#00356b; --navy2:#002247; --paper:#fbf8f2; --line:#dde3ea; --muted:#5b6573; --ok:#2e7d4f; --red:#b3261e; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--paper); color:#1b1f24; line-height:1.5; }
+  header { background:linear-gradient(135deg,var(--navy),var(--navy2)); color:#fff; padding:24px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1, h2 { font-family: Georgia, serif; margin:0; }
+  header p { margin:6px 0 0; color:#c9d8ec; }
+  nav { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; }
+  nav a { color:#fff; text-decoration:none; background:rgba(255,255,255,.12); padding:6px 12px; border-radius:999px; font-weight:600; font-size:.9rem; }
+  main { padding:24px; }
+  section { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px 22px; margin-bottom:28px; }
+  .head { display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:8px; }
+  h2 { color:var(--navy); font-size:1.5rem; }
+  .stamp { border:3px double var(--red); color:var(--red); font:900 .9rem ui-monospace,Menlo,monospace; letter-spacing:.14em; padding:3px 10px; border-radius:6px; transform:rotate(-6deg); }
+  .facts { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:8px; margin:10px 0 14px; font-size:.9rem; }
+  .facts div { background:#f4f7fb; border-radius:8px; padding:8px 10px; }
+  .facts b { color:var(--navy); display:block; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; }
+  figure { margin:0; }
+  figure img { width:100%; border:1px solid var(--line); border-radius:10px; box-shadow:0 10px 26px -16px rgba(0,34,71,.5); display:block; }
+  figcaption { color:var(--muted); font-size:.88rem; margin-top:8px; }
+  .missing { border:2px dashed var(--line); border-radius:10px; padding:30px; text-align:center; color:var(--muted); }
+  .total { background:#eef7f1; border:1px solid #cfe7d8; border-radius:12px; padding:14px 18px; font-size:.95rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Campus Customs: Resolved Board</h1>
+    <p>Screenshots of the React back-office desk after the agent team resolved each ticket on a clean run (shop date 2026-08-31, model gpt-6-luna). Checking went from <b>$3,400.00</b> to <b>$152.00</b>.</p>
+    <nav><a href="#t101">Ticket 101</a><a href="#t102">Ticket 102</a><a href="#t103">Ticket 103</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+  <section id="t101">
+    <div class="head"><h2>#101 · Bulldog tee for Tauhid Zaman</h2><span class="stamp">RESOLVED</span></div>
+    <div class="facts">
+      <div><b>Outcome</b>Tee S out of stock. Invoice 501 paid to lift the vendor hold, then a 1-tee reprint PO approved (ETA 09-05). Delay note drafted.</div>
+      <div><b>Agents</b>Boss · Inventory · Accounting · Customer Service</div>
+      <div><b>Human approvals</b>#1 invoice 501 −$840.00 · #3 PO #1 −$8.00</div>
+      <div><b>Runs</b>Start → close-out → close-out (resolved)</div>
+    </div>
+    <figure>
+      <img src="resolved_board_images/board_101.png" alt="Board with ticket 101 resolved" onerror="this.outerHTML='<div class=missing>resolved_board_images/board_101.png not found</div>'">
+      <figcaption>Ticket 101 stamped RESOLVED. The Boss's close-out decision is in "Who did what", the approved $8 purchase order and the unsent customer draft are pinned to the board, and the ledger shows all three payments with the register at <b>$152.00</b>.</figcaption>
+    </figure>
+  </section>
+
+  <section id="t102">
+    <div class="head"><h2>#102 · Rent due, Elm City Properties</h2><span class="stamp">RESOLVED</span></div>
+    <div class="facts">
+      <div><b>Outcome</b>Rent of $2,400 for lease 1 confirmed, approved and paid. The lease's next due date moved to 2026-10-02.</div>
+      <div><b>Agents</b>Boss · Facilities · Accounting (Inventory and Customer Service not needed)</div>
+      <div><b>Human approvals</b>#2 rent −$2,400.00</div>
+      <div><b>Runs</b>Start → close-out (resolved)</div>
+    </div>
+    <figure>
+      <img src="resolved_board_images/board_102.png" alt="Board with ticket 102 resolved" onerror="this.outerHTML='<div class=missing>resolved_board_images/board_102.png not found</div>'">
+      <figcaption>Ticket 102 stamped RESOLVED. Only the Boss's seat lit up on the close-out run. The Boss's call confirms payment #2 and the new due date, and the register reads <b>$160.00</b> after the invoice and rent were signed (before the tee PO).</figcaption>
+    </figure>
+  </section>
+
+  <section id="t103">
+    <div class="head"><h2>#103 · Yale AI Club bulk hoodie discount</h2><span class="stamp">RESOLVED</span></div>
+    <div class="facts">
+      <div><b>Outcome</b>Boss set 25% off: 20 × $43.50 = $870.00 (49.4% margin). 8 in stock, 12 need a restock. Reply drafted.</div>
+      <div><b>Agents</b>Boss · Inventory · Accounting · Customer Service (Facilities not needed)</div>
+      <div><b>Human approvals</b>None (no money moved)</div>
+      <div><b>Runs</b>Start (resolved)</div>
+    </div>
+    <figure>
+      <img src="resolved_board_images/board_103.png" alt="Board with ticket 103 resolved" onerror="this.outerHTML='<div class=missing>resolved_board_images/board_103.png not found</div>'">
+      <figcaption>All three tickets show RESOLVED on the spike. For 103, four seats are done and Facilities stayed off the ticket. "Who did what" shows Inventory's stock check, Accounting's quote and the Boss's 25% decision, and checking stays at <b>$152.00</b>.</figcaption>
+    </figure>
+  </section>
+
+  <div class="total"><b>Cash check:</b> $3,400.00 − $840.00 (invoice 501) − $2,400.00 (rent) − $8.00 (tee PO) = <b>$152.00</b>, which matches <code>cash_accounts</code> in <code>campus_customs_new.db</code>. Itemized on the Cash tab of <code>desk_tickets.html</code>.</div>
+</main>
+</body>
+</html>
